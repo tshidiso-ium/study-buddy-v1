@@ -1,0 +1,263 @@
+/* Add some basic styles to the navigation menu */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffff;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  border: 1px solid #F9D9E6;
+}
+@media (max-width: 768px) {
+  .ul {
+    visibility: hidden;
+  }
+}
+
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  position: relative;
+  color: gray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: "Lucida Handwriting", "Courier New", monospace;
+}
+.li-a-avator {
+  display: block;
+  position: relative;
+  color: gray;
+  text-align: center;
+  padding: 6px 10px;
+}
+li a::before {
+  content: '';
+  background-color: #F9D9E6;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  transition: width 0.3s ease;
+}
+
+li a:hover::before {
+  width: 100%; /* The pseudo-element will expand to the right */
+}
+
+
+.active {
+  background-color: #F9D9E6;
+}
+  
+  /* Add some styles to the features section */
+.features-section {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 35px;
+  margin-left: 35px;
+}
+@media (max-width: 768px) {
+  .features-section  {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+  
+  .feature {
+    flex-basis: 30%;
+    text-align: center;
+  }
+  
+  .feature h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .feature p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+  
+
+  
+
+.welcome-page {
+   background-color: #fff;  /* light gray background */
+    color: #333333; /* dark gray text */
+    /* 
+    background-image: url('../media/Study-Buddy-Bg.png'); Replace with the actual path to your PNG image 
+    background-size: cover; /* Adjust as needed: cover, contain, or a specific size 
+    background-repeat: no-repeat;
+    background-position: center center;*/
+
+  }
+  
+  header {
+    max-height: 350px;
+    background-color: #ffff; /* pastel pink */
+    padding: 0px 0;
+  }
+  
+
+  
+
+  .hero-section p {
+    color: #666666; /* medium gray text */
+  }
+  
+
+  
+  .feature {
+    width: calc(33.33% - 20px);
+    margin-bottom: 30px;
+    background-color: #D3E0F1; /* pastel blue */
+    padding: 20px;
+    text-align: center;
+  }
+  .feature:hover {
+    box-shadow: 0 0 10px gray, 0 0 10px gray, 0 0 10px gray, 0 0 10px gray;
+    transform: scale(1.1);
+  }
+  
+  .feature h2 {
+    color: #333333; /* dark gray text */
+  }
+  
+  .feature p {
+    color: #666666; /* medium gray text */
+    font-family: "Lucida Handwriting", "Courier New", monospace;
+  }
+  
+  .icon {
+    font-size: 68px;
+    margin-bottom: 20px;
+    color: #333333; /* dark gray icon color */
+  }
+  
+  footer {
+    background-color: #F9D9E6; /* pastel pink */
+    color: gray; /* dark gray text */
+    text-align: center;
+    padding: 20px 0;
+    font-family: "Lucida Handwriting", "Courier New", monospace;
+  
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+
+  }
+  .social-icons-color {
+    color: gray;  
+  }
+  
+  .social-icons a {
+    margin: 0 1rem;
+  }
+  .social-icons-color:hover {
+    box-shadow: 0 0 10px #D3E0F1, 0 0 20px #D3E0F1, 0 0 30px #D3E0F1, 0 0 40px #D3E0F1;
+    transform: scale(1.1);
+    animation: bounce 0.5s ease;
+  }
+  
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  .ul {
+    z-index: 9999; 
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: 300px;
+    width: 100%;
+    opacity: 0.8;
+    object-fit: fill
+  }
+
+  /* =========================
+   LOGO STYLING (Responsive)
+   ========================= */
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .logo {
+    max-width: 280px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .logo {
+    max-width: 180px;
+    max-height: 150px;
+  }
+}
+  .thank-you-panel {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .thank-you-panel img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px; /* Add spacing below the text */
+  }
+
+  .thank-you-panel.show {
+    display: block;
+    opacity: 1;
+  }
+
+  .profile-container {
+    display: block;
+    margin-left: auto;
+    margin-right: 20px;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+  
+  .profile-container-logout {
+    opacity: 1; /* Initially hidden */
+    animation: fadeOut 1s ease-in-out backwards;
+  }
+  
+  @keyframes loginPageFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .loginPageFadeIn {
+    animation: loginPageFadeIn 0.5s ease-in-out;
+  }

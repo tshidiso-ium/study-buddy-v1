@@ -1,0 +1,64 @@
+.buy-token-panel {
+    height: fit-content;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+
+  .buy-token-container{
+    display: flex;
+    padding: 20px;
+    width: 80%;
+    height: 100%; /* Set the height to 100% of the viewport height */
+    background-image: linear-gradient(to right, rgba(66, 103, 178, 0.1) 10%, rgba(173, 216, 230, 0.2)); /* Adjust the RGBA values and alpha for the haze */
+    border-radius: 15px; /* Adjust the value to control the amount of rounding */
+    margin-left: 10%; /* Pushes the container to the center horizontally */
+    margin-right: 10%; 
+    margin-top: 5%;
+    margin-bottom: 5%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Create a subtle shadow */
+    position: relative;
+    fill-opacity: 0.2;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+.token-left-panel,
+.token-right-panel {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .token-left-panel,
+  .token-right-panel {
+    flex: 1 1 100%;  /* each takes full width */
+    padding: 15px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .token-left-panel,
+  .token-right-panel {
+    flex: 1 1 100%; 
+    padding: 10px;
+  }
+  .buy-token-container {
+    flex-wrap: wrap;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+.token-right-panel {
+  background-color: white;
+  border-radius: 15px;
+}

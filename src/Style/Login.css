@@ -1,0 +1,220 @@
+.login-body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-input {
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 30px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.login-button {
+    border-radius:  5px;
+    border: 1px solid #F9D9E6;
+    padding: 10px;
+    margin: 5px;
+}
+
+.login-button:hover {
+    cursor: pointer;
+    background: #F9D9E6;
+    color:white;
+    animation: shake 0.5s ease-in-out;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    align-items: center;
+    height: 300px;
+    max-height: 100%; 
+    overflow-y: auto;
+}
+
+.login-form-group {
+    width: 90%;
+    margin: 5px;
+    display: flex;
+    max-width: 90%;
+    flex-direction: column;
+}
+
+.login-form-group label {
+    text-align: left;
+    color: gray;
+}
+
+.login-form-group input {
+    margin-top: 5px;
+    height: 30px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 1px solid gray;
+
+
+}
+
+.invalid-label {
+    color: red;
+    /* font-size: x-small; */
+    transition: transform 0.3s, color 0.3s;
+ /* Slide label in from left */
+    align-self: start;
+    transform: translateX(10px);
+  }
+
+.invalid-input {
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid red;
+    height: 30px;
+    transition: transform 0.3s, color 0.3s;
+}
+.login-card {
+    position: absolute;
+    box-shadow: 0 4px 8px 0 #F9D9E6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    max-width: 400px;
+    min-width: 300px;
+    max-height: 500px;
+    min-height: 400px;
+    background:white;
+    border-radius: 15px;
+}
+
+/* Tablet tweaks */
+@media (max-width: 1024px) {
+  .login-card {
+    width: min(52vw, 320px);
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .login-card {
+    width: 50vw;
+    border-radius: 10px;
+  }
+  .login-body {
+    overflow: visible
+  }
+}
+
+
+.login {
+    z-index: 2;
+    transform: rotate(- 5deg);
+}
+
+.signup {
+    z-index: 1;
+    transform:rotate(5deg);
+}
+
+.login-switchText {
+    color: blue;
+    text-decoration: underline;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.login-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Optional: Center vertically in viewport */
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+.login-res-info.show {
+    width: 60%;
+    height: 70%;
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    z-index: 9999;
+}
+
+.login-res-info {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+
+.login-res-info img {
+    max-width: 80%;
+    height: 80%;
+    margin-top: 2%; /* Add spacing below the text */
+    position: relative;
+  }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes toRightLogin{
+    0%{
+        transform: translatex(0px) rotate(5deg);
+    }
+    100% {
+        transform: translatex(500px) rotate(5deg);
+    }
+}
+
+@keyframes toRightSignup{
+    0%{
+        transform: translatex(0px) rotate(-5deg);
+    }
+    100% {
+        transform: translatex(500px) rotate(-5deg);
+    }
+}
+
+@keyframes toPosition {
+    0%{
+        transform: translatex(500px) rotate(5deg);
+    }
+    100% {
+        transform: translatex(0px) rotate(5deg);
+    }
+}
+
+@keyframes toPositionSignup {
+    0%{
+        transform: translatex(500px) rotate(-5deg);
+    }
+    100% {
+        transform: translatex(0px) rotate(-5deg);
+    }
+}

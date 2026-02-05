@@ -1,0 +1,222 @@
+.section-container-left{
+    display: flex;
+    padding: 20px;
+    width: 80%;
+    height: 100%; /* Set the height to 100% of the viewport height */
+    background-image: linear-gradient(to right, rgba(66, 103, 178, 0.1) 10%, rgba(173, 216, 230, 0.2)); /* Adjust the RGBA values and alpha for the haze */
+    border-radius: 15px; /* Adjust the value to control the amount of rounding */
+    margin-left: 10%; /* Pushes the container to the center horizontally */
+    margin-right: 10%; 
+    margin-top: 2%;
+    margin-bottom: 1%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Create a subtle shadow */
+    position: relative;
+    fill-opacity: 1;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.8s ease;
+  }
+
+  @media (max-width: 768px) {
+    .section-container-left {
+      flex-wrap: wrap;
+      margin-left: 2%; /* Pushes the container to the center horizontally */
+      margin-right: 2%; 
+      padding: 5px;
+      width: 100%;
+    }
+  }
+
+  
+.section-container-right{
+  display: flex;
+  padding: 20px;
+  width: 80%;
+  height: 100%; /* Set the height to 100% of the viewport height */
+  background-image: linear-gradient(to right, rgba(66, 103, 178, 0.1) 10%, rgba(173, 216, 230, 0.2)); /* Adjust the RGBA values and alpha for the haze */
+  border-radius: 15px; /* Adjust the value to control the amount of rounding */
+  margin-left: 10%; /* Pushes the container to the center horizontally */
+  margin-right: 10%; 
+  margin-top: 2%;
+  margin-bottom: 1%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Create a subtle shadow */
+  position: relative;
+  fill-opacity: 1;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(200%);
+  transition: transform 0.8s ease;
+}
+  @media (max-width: 768px) {
+    .section-container-right {
+      flex-wrap: wrap-reverse;
+      margin-left: 2%; /* Pushes the container to the center horizontally */
+      margin-right: 2%; 
+      padding: 5px;
+      width: 100%;
+    }
+  }
+
+.section-container-right.open {
+    transform: translateX(0);
+}
+
+.section-container-left.open {
+    transform: translateX(0);
+}
+.section-panel {
+    height: fit-content;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  @keyframes fadeInFromLeft {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .hero-section-left{
+    flex: 6;
+    display: block;
+    padding: 0px;
+    width: 100%;
+    height: 100%; /* Set the height to 100% of the viewport height */
+    border-radius: 15px; /* Adjust the value to control the amount of rounding */
+    margin-left: 5%; /* Pushes the container to the center horizontally */
+    margin-right: 0%; 
+    margin-top: 2%;
+    margin-bottom: 1%;
+    position: relative;
+    fill-opacity: 1;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0);
+    transition: transform 0.8s ease;
+  }
+
+  /* Tablet adjustments */
+  @media (max-width: 1024px) {
+    .hero-section-left {
+      width: 95%;
+      max-width: 900px;
+      border-radius: 12px;
+    }
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .hero-section-left {
+      width: 100%;
+      max-width: 100%;
+      margin: 4% auto;       /* more spacing on mobile */
+      border-radius: 8px;
+    }
+  }
+
+
+  .hero-section-right{
+    flex: 2;
+    display: flex;
+    padding: 0px;
+    width: 100%;
+    height: 100%; /* Set the height to 100% of the viewport height */
+    border-radius: 15px; /* Adjust the value to control the amount of rounding */
+    margin-left: 0%; /* Pushes the container to the center horizontally */
+    margin-right: 5%; 
+    margin-top: 2%;
+    margin-bottom: 1%;
+    position: relative;
+    fill-opacity: 1;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-200%);
+    transition: transform 0.8s ease;
+  }
+  .hero-section-right.open {
+    transform: translateX(0);
+}
+    
+.hero-section {
+  background-color: #fff;
+  padding: clamp(20px, 5vw, 50px); /* scales with screen width */
+  text-align: center;
+  margin: 0 auto; /* centers content */
+  max-width: 1400px; /* cap width on large screens */
+  display: flex;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* spacing between child elements */
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .hero-section {
+    padding: clamp(15px, 4vw, 30px);
+    gap: 15px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; /* stack content vertically */
+    padding: 20px 10px;
+    gap: 10px;
+  }
+}
+.hero-section h1 {
+  font-size: clamp(2rem, 5vw + 1rem, 5rem); 
+  /* min = 2rem, scales with viewport width, max = 5rem */
+  margin-bottom: 20px;
+  line-height: 1.2; /* improve readability */
+  text-align: center; /* optional: centers heading on small screens */
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .hero-section h1 {
+    font-size: clamp(1.8rem, 4vw + 0.5rem, 3.5rem);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    margin-bottom: 15px;
+  }
+}
+
+.hero-section p {
+  font-size: clamp(1rem, 2vw + 0.5rem, 2rem); 
+  /* min 1rem, scales with viewport width, max 2rem */
+  line-height: 1.6;  /* more natural line spacing */
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Lucida Handwriting", "Courier New", monospace;
+  text-align: center; /* optional: improves readability on small screens */
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .hero-section p {
+    font-size: clamp(1rem, 1.8vw + 0.3rem, 1.6rem);
+    line-height: 1.5;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-section p {
+    font-size: clamp(0.9rem, 4vw, 1.3rem);
+    line-height: 1.4;
+    padding: 0 10px; /* add breathing room on smaller screens */
+  }
+}
