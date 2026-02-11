@@ -607,44 +607,44 @@ function WelcomePage() {
       <main>
         {
           // deviceWidth.width >= 769  ?
-          <div className="ul">
-            <ul>
-              <div style={{display:'flex', alignItems:"center"}}>
-                  <img src={logo} alt="logo" style={{ maxWidth: "35px", maxHeight: "35px", paddingBottom: '4px'}}/>
-                  <div style={{
-                          height:'30px',
-                          paddingTop: "2px",
-                          paddingLeft: "12px",
-                          paddingRight: "20px",
-                          color: '#F9D9E6'               
-                      }}>Study Buddy </div>
-              </div>
-              <li ><a id="homeLinkClick" class={liHome.class} href="#Home" onClick={changeLiState}> Home</a></li>
-              <li ><a id="pastPapersLinkClick" class={liG12.class} href="#PastPapers" onClick={changeLiState}>Exam Papers</a></li>
-              <li ><a id="donateLinkClick" class={donatePage.class} href="#Donate" onClick={changeLiState}>Donate</a></li>
-              {
-              userLoginDetails.userLogedIn ?
-                <>
-                  <li> <a id="chatbotLinkCLick" className={chatBotComponent.class} href="#Chatbot" onClick={changeLiState}>Chat</a></li>
-                  <li> <a id="purchasTokensLinkClick" className={purchaseTokensComponent.class} href="#puchaseTokens" onClick={changeLiState}>Purchase Tokens</a></li>
-                  <div className={`profile-container ${logoutClicked ? 'profile-container-logout' : 'profile-container'}`}>
-                      <li>
-                      <div className="li-a-avator"><Profile user={userLoginDetails}/></div>
-                      </li>
-                      <li>
-                      <a className={profileComponent.class} id="profileComponentCLick" onClick={changeLiState}>Profile</a>
-                      </li>
-                  </div>
-                </>
-                :
-                <div className={`profile-container ${logoutClicked ? 'profile-container-logout' : 'profile-container'}`}>
-                    <div className="profile-wrapper">
-                      <li ><a id="loginLinkClick" class={loginComponent.class} onClick={changeLiState}>Sign In</a></li>
-                    </div>
-                </div>
-              }
-              </ul>
-          </div>
+          // <div className="ul">
+          //   <ul>
+          //     <div style={{display:'flex', alignItems:"center"}}>
+          //         <img src={logo} alt="logo" style={{ maxWidth: "35px", maxHeight: "35px", paddingBottom: '4px'}}/>
+          //         <div style={{
+          //                 height:'30px',
+          //                 paddingTop: "2px",
+          //                 paddingLeft: "12px",
+          //                 paddingRight: "20px",
+          //                 color: '#F9D9E6'               
+          //             }}>Study Buddy </div>
+          //     </div>
+          //     <li ><a id="homeLinkClick" class={liHome.class} href="#Home" onClick={changeLiState}> Home</a></li>
+          //     <li ><a id="pastPapersLinkClick" class={liG12.class} href="#PastPapers" onClick={changeLiState}>Exam Papers</a></li>
+          //     <li ><a id="donateLinkClick" class={donatePage.class} href="#Donate" onClick={changeLiState}>Donate</a></li>
+          //     {
+          //     userLoginDetails.userLogedIn ?
+          //       <>
+          //         <li> <a id="chatbotLinkCLick" className={chatBotComponent.class} href="#Chatbot" onClick={changeLiState}>Chat</a></li>
+          //         <li> <a id="purchasTokensLinkClick" className={purchaseTokensComponent.class} href="#puchaseTokens" onClick={changeLiState}>Purchase Tokens</a></li>
+          //         <div className={`profile-container ${logoutClicked ? 'profile-container-logout' : 'profile-container'}`}>
+          //             <li>
+          //             <div className="li-a-avator"><Profile user={userLoginDetails}/></div>
+          //             </li>
+          //             <li>
+          //             <a className={profileComponent.class} id="profileComponentCLick" onClick={changeLiState}>Profile</a>
+          //             </li>
+          //         </div>
+          //       </>
+          //       :
+          //       <div className={`profile-container ${logoutClicked ? 'profile-container-logout' : 'profile-container'}`}>
+          //           <div className="profile-wrapper">
+          //             <li ><a id="loginLinkClick" class={loginComponent.class} onClick={changeLiState}>Sign In</a></li>
+          //           </div>
+          //       </div>
+          //     }
+          //     </ul>
+          // </div>
 
         }
         {
