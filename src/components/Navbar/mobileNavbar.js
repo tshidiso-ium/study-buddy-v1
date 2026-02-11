@@ -7,12 +7,6 @@ import Profile from '../login/Profile';
 export default function Navbar({userLoginDetails, changeLiState, logoutClicked }) {
   const [open, setOpen] = useState(false);
 
-useEffect(()=>{
-    console.log("userLoginDetails: ", userLoginDetails);
-    console.log("logoutClicked: ", logoutClicked);
-    console.log("changeLiState: ", changeLiState);
-}, [])
-
   return (
     <nav className="navbar">
       <div style={{display:'flex'}}>

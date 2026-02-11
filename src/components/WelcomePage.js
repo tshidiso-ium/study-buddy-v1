@@ -23,6 +23,7 @@ import logo from "../media/Study-Budy-Logo.png"
 
 function WelcomePage() {
   //const [activePan, setActivePan] = useState("");
+  const deviceWidth = WindowSize();
   const [activePan, setActivePan] = useState("Home");
   const [liHome, setLiHome] = useState({class:"active"});
   const [liG10, setLiG10] = useState({class:""});
@@ -37,7 +38,7 @@ function WelcomePage() {
   const [userLoginDetails, setUserLoginDetails] = useState({userLogedIn:false});
   const [chatBotComponent, setChatBotComponent] = useState({class:""});
   const [purchaseTokensComponent, setPurchaseTokensComponent] = useState({class:""});
-  const deviceWidth = WindowSize();
+
 
   useEffect(() => {
     // Read the current URL
@@ -605,8 +606,9 @@ function WelcomePage() {
       </header>
       <main>
         {
-          deviceWidth.width >= 768  &&
-          <ul className="ul">
+          // deviceWidth.width >= 769  ?
+          <div className="ul">
+            <ul>
               <div style={{display:'flex', alignItems:"center"}}>
                   <img src={logo} alt="logo" style={{ maxWidth: "35px", maxHeight: "35px", paddingBottom: '4px'}}/>
                   <div style={{
@@ -641,11 +643,12 @@ function WelcomePage() {
                     </div>
                 </div>
               }
-          </ul>
+              </ul>
+          </div>
+
         }
         {
-          deviceWidth.width <= 768  &&
-          <MobileNavbar userLoginDetails={userLoginDetails} changeLiState={changeLiState} logoutClicked={logoutClicked}/>
+            <MobileNavbar userLoginDetails={userLoginDetails} changeLiState={changeLiState} logoutClicked={logoutClicked}/>
         }
         {
           loginComponent.class === "active" ? (
