@@ -551,6 +551,7 @@ function WelcomePage() {
       "Login"
     )
   };
+
   const thankYouPan = () => {
     return (
       <div className={`thank-you-panel ${showPanel ? 'show' : ''}`}>

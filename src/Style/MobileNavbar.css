@@ -14,6 +14,7 @@
   z-index: 99;
   max-height: 60px;
   backdrop-filter:  blur(5px);
+  border: 1px solid #F9D9E6;
 }
 
 /* Logo */
@@ -24,23 +25,67 @@
 
 /* Links */
 .nav-links {
+  min-width: 65%;
   backdrop-filter:  blur(5px);
   z-index: 99;
   display: flex;
-  gap: 3.2rem;
+  /* gap: 3.2rem; */
   border-bottom: 1px #F9D9E6;
 }
 
-.nav-links a {
-  color: #F9D9E6;
+.nav-link {
+  /* color: #F9D9E6;
   text-decoration: none;
-  transition: 0.3s;
-  z-index: 99;
+  /* transition: 0.3s; */
+  /* z-index: 99; */ 
+  color: gray;
+  text-decoration: none;
+  font-family: "Lucida Handwriting", "Courier New", monospace;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+
 }
 
-.nav-links a:hover {
-  color: #F9D9E6;
+.nav-link-active{
+  /* color: #F9D9E6;
+  text-decoration: none;
+  /* transition: 0.3s; */
+  /* z-index: 99; */ 
+  color: gray;
+  text-decoration: none;
+  font-family: "Lucida Handwriting", "Courier New", monospace;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #F9D9E6;
 }
+.nav-link:hover {
+  /* content: ''; */
+  background-color: #F9D9E6;
+  /* position: relative;
+  cursor: pointer; */
+  /* top: 0;
+  left: 0; */
+  /* width: 0;
+  height: 100%;
+  z-index: 1; */
+  transition: width 1.3s ease;
+}
+
+/* .nav-link:hover::before {
+  width: 100%; /* The pseudo-element will expand to the right 
+} */
 
 /* Hamburger Menu */
 .hamburger {
@@ -76,6 +121,7 @@
     backdrop-filter:  blur(5px);
     z-index: 99;
     background-color: white;      
+    gap: 3.2rem;
   }
 
   .nav-links.open {
