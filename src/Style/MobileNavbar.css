@@ -49,14 +49,9 @@
   align-items: center;
   overflow: hidden;
   cursor: pointer;
-
 }
 
 .nav-link-active{
-  /* color: #F9D9E6;
-  text-decoration: none;
-  /* transition: 0.3s; */
-  /* z-index: 99; */ 
   color: gray;
   text-decoration: none;
   font-family: "Lucida Handwriting", "Courier New", monospace;
