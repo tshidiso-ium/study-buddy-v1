@@ -46,7 +46,8 @@ export default function FilterControl({yearSelected, subjectSelected, term}) {
     {id:"year20",name:"2020"},
     {id:"year21",name:"2021"},
     {id:"year22",name:"2022"},
-    {id:"year23",name:"2023"}
+    {id:"year23",name:"2023"},
+    {id:"year24",name:"2024"}
   ]
 
   var term = [

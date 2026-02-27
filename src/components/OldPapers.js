@@ -64,48 +64,134 @@ function ExamPapers({Grade}) {
     getPaper();
   }, [year,subject]);
 
-  const displayCurrentUi = () =>{
-    if(year && subject){
-      return (
-        <div className="right-panel-content" >
-        <div className="exam-papers__title2">{year} Exam Papers</div>
-          <div style={{minWidth: "100%"}}>
-              {papers.map((paper, index) => (
-              <div key={paper.id} className={`exam-papers__item`} style={{ animationDelay: `${index * 0.1}s` }}>
-                <span className="exam-papers__metadata1">{paper.paperName}</span>
-                <span className="exam-papers__metadata2">{`Term ${paper.term}`}</span>
-                <span className="exam-papers__metadata3"> {`${paper.year}`} </span>
-                <a href={paper.url} className="exam-papers__download-link" download>Download</a>
+//   const displayCurrentUi = () =>{
+//     if(year && subject){
+//       return (
+//         <div className="right-panel-content" >
+//         <div className="exam-papers__title2">{year} Exam Papers</div>
+//           <div style={{minWidth: "100%"}}>
+//               {papers.map((paper, index) => (
+//               <div key={paper.id} className={`exam-papers__item`} style={{ animationDelay: `${index * 0.1}s` }}>
+//                 <span className="exam-papers__metadata1">{paper.paperName}</span>
+//                 {/* <span className="exam-papers__metadata2">{`Term ${paper.term}`}</span>
+//                 <span className="exam-papers__metadata3"> {`${paper.year}`} </span> */}
+//                 <a href={paper.url} className="exam-papers__download-link" download>Download</a>
+//               </div>
+//               ))}
+//           </div>
+//         </div>
+//       )
+//   }
+//   else {
+//     if(year && !subject){
+//       return (
+//         <div className="right-panel-content">
+//           <h3 className="exam-papers__title">Please Select A Subject</h3>
+//         </div>
+//       )
+//     }
+//     else if(subject && !year){
+//       return (
+//         <div className="right-panel-content">
+//             <h3 className="exam-papers__title">Please Select A Year</h3>
+//         </div>
+//       )
+//     } 
+//     else{
+//       return (
+//         <div className="right-panel-content">
+//           <h3 className="exam-papers__title">Please Select A Subject</h3>
+//         </div>
+//       )
+//     }   
+//   }
+// }
+
+const displayCurrentUi = () => {
+  if (year && subject) {
+    return (
+      <div className="right-panel-content">
+        <div className="exam-papers__title2">
+          {year} {subject} Exam Papers
+        </div>
+
+        <div className="exam-papers__list">
+          {papers.map((paper, index) => (
+            <div
+              key={paper.id}
+              className="exam-papers__card"
+              style={{ animationDelay: `${index * 0.05}s` }}
+            >
+              <div className="exam-papers__header">
+                <div className="exam-papers__name">
+                  {paper.paperName}
+                </div>
+
+                {paper.term && (
+                  <div className="exam-papers__meta">
+                    Term {paper.term}
+                  </div>
+                )}
               </div>
-              ))}
-          </div>
+
+              <div className="exam-papers__downloads">
+
+                {/* Question Paper */}
+                {paper.url && (
+                  <a
+                    href={paper.url}
+                    className="download-btn primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    📄 Question Paper
+                  </a>
+                )}
+
+                {/* Memo */}
+                {paper.mgUrl && (
+                  <a
+                    href={paper.mgUrl}
+                    className="download-btn success"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    📝 Memo
+                  </a>
+                )}
+
+                {/* Answer Sheet (Optional) */}
+                {paper.answerUrl && (
+                  <a
+                    href={paper.answerUrl}
+                    className="download-btn info"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    📘 Answer Sheet
+                  </a>
+                )}
+
+                {/* Addendum (Optional) */}
+                {paper.addendumUrl && (
+                  <a
+                    href={paper.addendumUrl}
+                    className="download-btn warning"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    📎 Addendum
+                  </a>
+                )}
+
+              </div>
+            </div>
+          ))}
         </div>
-      )
+      </div>
+    );
   }
-  else {
-    if(year && !subject){
-      return (
-        <div className="right-panel-content">
-          <h3 className="exam-papers__title">Please Select A Subject</h3>
-        </div>
-      )
-    }
-    else if(subject && !year){
-      return (
-        <div className="right-panel-content">
-            <h3 className="exam-papers__title">Please Select A Year</h3>
-        </div>
-      )
-    } 
-    else{
-      return (
-        <div className="right-panel-content">
-          <h3 className="exam-papers__title">Please Select A Subject</h3>
-        </div>
-      )
-    }   
-  }
-}
+};
 
   return (
     <div className="exam-papers">
