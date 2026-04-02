@@ -36,7 +36,8 @@ export default function FilterControl({yearSelected, subjectSelected, term}) {
     {id:"englishHl",name:"English HL"},
     {id:"physicalScience",name:"Physical Science"},
     {id:"lifeOrientation",name:"Life Orientation"},
-    {id:"lifeScience",name:"Life Science"}
+    {id:"lifeScience",name:"Life Science"},
+    {id:"afrikaans",name:"Afrikaans FAL"}
   ]
   var year = [
     {id:"year16",name:"2016"},

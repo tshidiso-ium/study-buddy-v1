@@ -203,7 +203,7 @@ const  LoginComponent = ({userDetails}) => {
 
     const setUpNewUser = async (userdetails) => {
       try{
-        const res = await fetch(`https://us-central1-study-buddy-bceaf.cloudfunctions.net/app/firebase/setUpNewUser?uid=${userdetails.uid}&email=${userdetails.email}&firstName=${"Tshidiso"}&lastName=${"Modiko"}`,{
+        const res = await fetch(`https://us-central1-study-buddy-bceaf.cloudfunctions.net/app/firebase/setUpNewUser?uid=${userdetails.uid}&email=${userdetails.email}&firstName=${signUpDetails.firstName}&lastName=${signUpDetails.lastName}`,{
           method: "Post",
           credentials: "include",
           headers: {
