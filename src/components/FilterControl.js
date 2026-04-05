@@ -37,7 +37,8 @@ export default function FilterControl({yearSelected, subjectSelected, term}) {
     {id:"physicalScience",name:"Physical Science"},
     {id:"lifeOrientation",name:"Life Orientation"},
     {id:"lifeScience",name:"Life Science"},
-    {id:"afrikaans",name:"Afrikaans FAL"}
+    {id:"afrikaans",name:"Afrikaans FAL"},
+    {id:"cat",name:"CAT"},
   ]
   var year = [
     {id:"year16",name:"2016"},
