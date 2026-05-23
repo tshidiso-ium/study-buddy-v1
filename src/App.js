@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from "react";
+import { loadGoogleAnalytics } from "./lib/analytics";
 import WelcomePage from './components/WelcomePage';
-// import Typist from 'react-typist';
-import { ConnectWithoutContactSharp } from '@mui/icons-material';
 
 function App() {
+  useEffect(() => {
+    loadGoogleAnalytics();
+  }, []);
+
   return (
     <div className="App">
         <WelcomePage/>  
